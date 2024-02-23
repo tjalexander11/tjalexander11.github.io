@@ -27,13 +27,40 @@
     <center><div class="box1">
         <center><p3>&#10042 &#10049 &#10042 &#10049 &#10042 &#10049 &#10042 &#10049 &#10042 &#10049</p3></center>
 
-    <center><p1>The KPOO live stream. Indepenent, non-commercial radio out of San Francisco. Only the best music.</p1></center>
+    <div id="nasaContainer">
+    <!-- Image will be loaded here -->
+    <img id="nasaImage" src="" alt="NASA Image">
 
-    <center><iframe src="https://kpoo.com/stream" width="310" height="250" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen title="KPOO Radio Live Stream"></iframe></center>
+    <!-- Information about the image will be displayed here -->
+    <div id="nasaInfo">
+        <h2 id="title"></h2>
+        <p id="date"></p>
+        <p id="explanation"></p>
+        <a id="hdurl" href="" target="_blank">View in high resolution</a>
+    </div>
+</div>
 
-    <center><p2>My favorite shows are <a href="https://spinitron.com/KPOO/show/95624/Soul-Explosion">Soul Explosion</a> with Mr. Ford at 1pm on Mondays and <a href="https://spinitron.com/KPOO/show/95507/Wake-The-Town?page=1">Wake the Town</a> with Adam at 3pm on Wednesdays. Huge ups to Chris for introducing me.</p2></center>
+<script>
+// JSON data containing information about the NASA image
+const nasaData = {
+    "copyright": "Helge Buesing",
+    "date": "2024-02-23",
+    "explanation": "This supernova shock wave plows through interstellar space at over 500,000 kilometers per hour...",
+    "hdurl": "https://apod.nasa.gov/apod/image/2402/NGC2736_Helge_Buesing2048.jpg",
+    "media_type": "image",
+    "service_version": "v1",
+    "title": "The Pencil Nebula Supernova Shock Wave",
+    "url": "https://apod.nasa.gov/apod/image/2402/NGC2736_Helge_Buesing1024.jpg"
+};
 
-    <center><div class="box1">
+// Update HTML elements with data from the JSON
+document.getElementById("nasaImage").src = nasaData.url;
+document.getElementById("title").innerText = nasaData.title;
+document.getElementById("date").innerText = `Date: ${nasaData.date}`;
+document.getElementById("explanation").innerText = nasaData.explanation;
+document.getElementById("hdurl").href = nasaData.hdurl;
+</script>
+
         <center><p3>&#10042 &#10049 &#10042 &#10049 &#10042 &#10049 &#10042 &#10049 &#10042 &#10049</p3></center>
         
     </div></center>
